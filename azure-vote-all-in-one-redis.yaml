@@ -23,12 +23,6 @@ spec:
         ports:
         - containerPort: 6379
           name: redis
-        resources:
-          requests:
-            cpu: 200m
-          limits:
-            cpu: 250m
-            memory: 64Mi          
 ---
 apiVersion: v1
 kind: Service
@@ -66,12 +60,6 @@ spec:
         image: crtests360.microsoft.com/azuredocs/azure-vote-front:v1
         ports:
         - containerPort: 80
-        resources:
-          requests:
-            cpu: 200m
-          limits:
-            cpu: 250m
-            memory: 64Mi
         env:
         - name: REDIS
           value: "azure-vote-back"
