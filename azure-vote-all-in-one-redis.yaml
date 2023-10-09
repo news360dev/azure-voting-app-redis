@@ -23,6 +23,12 @@ spec:
         ports:
         - containerPort: 6379
           name: redis
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+            memory: 128Mi          
 ---
 apiVersion: v1
 kind: Service
@@ -57,7 +63,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+        image: crtests360.microsoft.com/azuredocs/azure-vote-front:v1
         ports:
         - containerPort: 80
         resources:
@@ -65,6 +71,7 @@ spec:
             cpu: 250m
           limits:
             cpu: 500m
+            memory: 128Mi
         env:
         - name: REDIS
           value: "azure-vote-back"
