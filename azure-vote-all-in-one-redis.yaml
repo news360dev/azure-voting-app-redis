@@ -57,7 +57,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: crtests360.azurecr.io/azuredocs/azure-vote-front:${{ github.sha }}
+        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
         ports:
         - containerPort: 80
         env:
